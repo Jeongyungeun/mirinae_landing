@@ -149,15 +149,8 @@
   const floatingCTAObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Hero 섹션이 보이면 버튼 숨김
-          floatingCTA.classList.remove('visible');
-          floatingCTA.classList.add('hidden');
-        } else {
-          // Hero 섹션이 안 보이면 버튼 표시
-          floatingCTA.classList.remove('hidden');
-          floatingCTA.classList.add('visible');
-        }
+        // Hero 섹션이 보이면 버튼 숨김, 안 보이면 표시
+        floatingCTA.classList.toggle('visible', !entry.isIntersecting);
       });
     },
     {
