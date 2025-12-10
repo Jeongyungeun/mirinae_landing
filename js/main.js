@@ -111,7 +111,8 @@
     const device = detectDevice();
 
     if (device === 'ios') {
-      window.open(appStoreURLs.ios, '_blank');
+      // iOS 심사 중 - 팝업 표시
+      showComingSoonModal();
     } else if (device === 'android') {
       window.open(appStoreURLs.android, '_blank');
     } else {
@@ -127,8 +128,81 @@
   if (appStoreBtn) {
     appStoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.open(appStoreURLs.ios, '_blank');
+      // iOS 앱스토어 심사 중 - 팝업 표시
+      showComingSoonModal();
     });
+  }
+
+  // ==================== COMING SOON MODAL ====================
+  /**
+   * iOS 앱스토어 출시 예정 팝업
+   */
+  function showComingSoonModal() {
+    // 모달이 이미 있으면 표시만
+    let modal = document.getElementById('coming-soon-modal');
+
+    if (!modal) {
+      // 모달 생성
+      modal = document.createElement('div');
+      modal.id = 'coming-soon-modal';
+      modal.innerHTML = `
+        <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" id="modal-backdrop">
+          <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 text-center transform transition-all">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-primary-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">곧 출시 예정입니다!</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">
+              iOS 앱이 현재 App Store 심사 중입니다.<br>
+              조금만 기다려 주세요!
+            </p>
+            <div class="flex flex-col gap-3">
+              <a href="https://play.google.com/store/apps/details?id=com.likeflameyungun.mirinae_drug_frontend" target="_blank"
+                 class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-xl transition-colors">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                </svg>
+                Android 버전 다운로드
+              </a>
+              <button id="close-modal-btn" class="px-6 py-3 text-slate-600 hover:text-slate-900 font-medium transition-colors">
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      // 닫기 버튼 이벤트
+      document.getElementById('close-modal-btn').addEventListener('click', hideComingSoonModal);
+
+      // 배경 클릭 시 닫기
+      document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+        if (e.target.id === 'modal-backdrop') {
+          hideComingSoonModal();
+        }
+      });
+
+      // ESC 키로 닫기
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          hideComingSoonModal();
+        }
+      });
+    }
+
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // 스크롤 방지
+  }
+
+  function hideComingSoonModal() {
+    const modal = document.getElementById('coming-soon-modal');
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = ''; // 스크롤 복원
+    }
   }
 
   if (playStoreBtn) {
