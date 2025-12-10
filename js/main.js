@@ -8,6 +8,107 @@
 (function () {
   'use strict';
 
+  // ==================== UTM TRACKING ====================
+  /**
+   * UTM 파라미터를 파싱하여 세션 스토리지에 저장
+   * 광고 채널별 유입 추적 (당근마켓, 인스타그램 등)
+   */
+  const UTMTracker = {
+    // UTM 파라미터 목록
+    params: ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'],
+
+    // URL에서 UTM 파라미터 추출
+    parseUTM() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmData = {};
+
+      this.params.forEach((param) => {
+        const value = urlParams.get(param);
+        if (value) {
+          utmData[param] = value;
+        }
+      });
+
+      return Object.keys(utmData).length > 0 ? utmData : null;
+    },
+
+    // 세션 스토리지에 UTM 저장 (첫 방문 시에만)
+    saveUTM() {
+      const existingUTM = sessionStorage.getItem('utm_data');
+      const currentUTM = this.parseUTM();
+
+      // 새로운 UTM이 있으면 저장 (기존 데이터 덮어쓰기)
+      if (currentUTM) {
+        currentUTM.landing_time = new Date().toISOString();
+        currentUTM.landing_page = window.location.pathname;
+        sessionStorage.setItem('utm_data', JSON.stringify(currentUTM));
+        return currentUTM;
+      }
+
+      // 기존 UTM 반환
+      return existingUTM ? JSON.parse(existingUTM) : null;
+    },
+
+    // 저장된 UTM 데이터 가져오기
+    getUTM() {
+      const data = sessionStorage.getItem('utm_data');
+      return data ? JSON.parse(data) : null;
+    },
+
+    // GA 이벤트에 UTM 정보 추가하여 전송
+    sendEventWithUTM(eventName, eventParams = {}) {
+      const utmData = this.getUTM();
+
+      // UTM 데이터가 있으면 이벤트 파라미터에 추가
+      const enrichedParams = { ...eventParams };
+      if (utmData) {
+        enrichedParams.utm_source = utmData.utm_source || '(direct)';
+        enrichedParams.utm_medium = utmData.utm_medium || '(none)';
+        enrichedParams.utm_campaign = utmData.utm_campaign || '(not set)';
+        enrichedParams.utm_term = utmData.utm_term || '';
+        enrichedParams.utm_content = utmData.utm_content || '';
+        enrichedParams.traffic_source = utmData.utm_source || 'direct';
+      } else {
+        enrichedParams.traffic_source = 'direct';
+      }
+
+      // Google Analytics 이벤트 전송
+      if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, enrichedParams);
+      }
+    },
+
+    // 광고 소스별 레이블 반환 (한글)
+    getSourceLabel() {
+      const utmData = this.getUTM();
+      if (!utmData) return '직접 유입';
+
+      const sourceLabels = {
+        daangn: '당근마켓',
+        karrot: '당근마켓',
+        instagram: '인스타그램',
+        facebook: '페이스북',
+        naver: '네이버',
+        google: '구글',
+      };
+
+      const source = (utmData.utm_source || '').toLowerCase();
+      return sourceLabels[source] || utmData.utm_source || '직접 유입';
+    },
+  };
+
+  // 페이지 로드 시 UTM 저장 및 페이지뷰 이벤트 전송
+  const savedUTM = UTMTracker.saveUTM();
+  if (savedUTM) {
+    console.log('%c📊 광고 유입 감지:', 'color: #3b82f6; font-weight: bold;', UTMTracker.getSourceLabel());
+  }
+
+  // 랜딩 페이지 방문 이벤트 (UTM 정보 포함)
+  UTMTracker.sendEventWithUTM('page_view_landing', {
+    event_category: 'engagement',
+    event_label: 'landing_page_visit',
+  });
+
   // ==================== DOM ELEMENTS ====================
   const floatingCTA = document.getElementById('floating-cta');
   const heroSection = document.getElementById('hero');
@@ -71,10 +172,10 @@
 
     // 플로팅 CTA 클릭 시 앱스토어로 이동
     floatingCTA.addEventListener('click', () => {
-      // Google Analytics 이벤트 전송
-      gtag('event', 'click_floating_cta', {
-        'event_category': 'download',
-        'event_label': 'floating_cta_button'
+      // Google Analytics 이벤트 전송 (UTM 정보 포함)
+      UTMTracker.sendEventWithUTM('click_floating_cta', {
+        event_category: 'download',
+        event_label: 'floating_cta_button',
       });
       redirectToAppStore();
     });
@@ -133,11 +234,11 @@
   if (appStoreBtn) {
     appStoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      // Google Analytics 이벤트 전송
-      gtag('event', 'click_app_store', {
-        'event_category': 'download',
-        'event_label': 'ios_app_store_button',
-        'platform': 'ios'
+      // Google Analytics 이벤트 전송 (UTM 정보 포함)
+      UTMTracker.sendEventWithUTM('click_app_store', {
+        event_category: 'download',
+        event_label: 'ios_app_store_button',
+        platform: 'ios',
       });
       // iOS 앱스토어 심사 중 - 팝업 표시
       showComingSoonModal();
@@ -219,11 +320,11 @@
   if (playStoreBtn) {
     playStoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      // Google Analytics 이벤트 전송
-      gtag('event', 'click_play_store', {
-        'event_category': 'download',
-        'event_label': 'google_play_store_button',
-        'platform': 'android'
+      // Google Analytics 이벤트 전송 (UTM 정보 포함)
+      UTMTracker.sendEventWithUTM('click_play_store', {
+        event_category: 'download',
+        event_label: 'google_play_store_button',
+        platform: 'android',
       });
       window.open(appStoreURLs.android, '_blank');
     });
