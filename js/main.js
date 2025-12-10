@@ -71,6 +71,11 @@
 
     // 플로팅 CTA 클릭 시 앱스토어로 이동
     floatingCTA.addEventListener('click', () => {
+      // Google Analytics 이벤트 전송
+      gtag('event', 'click_floating_cta', {
+        'event_category': 'download',
+        'event_label': 'floating_cta_button'
+      });
       redirectToAppStore();
     });
   }
@@ -128,6 +133,12 @@
   if (appStoreBtn) {
     appStoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      // Google Analytics 이벤트 전송
+      gtag('event', 'click_app_store', {
+        'event_category': 'download',
+        'event_label': 'ios_app_store_button',
+        'platform': 'ios'
+      });
       // iOS 앱스토어 심사 중 - 팝업 표시
       showComingSoonModal();
     });
@@ -208,6 +219,12 @@
   if (playStoreBtn) {
     playStoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      // Google Analytics 이벤트 전송
+      gtag('event', 'click_play_store', {
+        'event_category': 'download',
+        'event_label': 'google_play_store_button',
+        'platform': 'android'
+      });
       window.open(appStoreURLs.android, '_blank');
     });
   }
