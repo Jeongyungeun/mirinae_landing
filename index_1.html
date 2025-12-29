@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미리내약 - 영양제, 끝까지 먹어본 적 있으세요?</title>
+    <meta name="description" content="비싼 영양제, 반도 못 먹고 버리셨죠? 약사가 복용까지 책임지고 관리해드립니다. 2주 무료체험.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX', {
+            'page_title': 'LP_B_끝까지안먹음',
+            'content_group': 'B_복용관리'
+        });
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --accent: #F59E0B;
+            --danger: #EF4444;
+            --dark: #18181B;
+            --gray: #71717A;
+            --light: #F4F4F5;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(to bottom, #ECFDF5 0%, var(--white) 100%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.35;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary);
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .hero-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        .hero-cta-secondary {
+            display: inline-block;
+            background: var(--white);
+            color: var(--dark);
+            border: 1px solid #E4E4E7;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .hero-cta-secondary:hover {
+            background: #F4F4F5;
+        }
+
+        .hero-note {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .hero-note strong {
+            color: var(--danger);
+        }
+
+        /* ========== PAIN ========== */
+        .pain {
+            padding: 64px 0;
+            background: var(--light);
+        }
+
+        .pain-title {
+            font-size: 22px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .pain-title .underline {
+            text-decoration: underline;
+            text-decoration-color: var(--danger);
+            text-underline-offset: 4px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .pain-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pain-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 16px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .pain-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .pain-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .pain-item p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .pain-stat {
+            margin-top: 32px;
+            text-align: center;
+            padding: 24px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 2px dashed var(--danger);
+        }
+
+        .pain-stat .number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--danger);
+        }
+
+        .pain-stat .label {
+            font-size: 15px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        /* ========== SOLUTION ========== */
+        .solution {
+            padding: 64px 0;
+        }
+
+        .solution-title {
+            font-size: 22px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .solution-title .highlight {
+            color: var(--primary);
+        }
+
+        .solution-sub {
+            text-align: center;
+            font-size: 15px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .solution-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .solution-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .solution-num {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .solution-item h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .solution-item p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ========== GAME ========== */
+        .game {
+            padding: 64px 0;
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .game-title {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .game-sub {
+            font-size: 15px;
+            color: #A1A1AA;
+            margin-bottom: 40px;
+        }
+
+        .game-visual {
+            position: relative;
+            width: 160px;
+            height: 220px;
+            margin: 0 auto 32px;
+            background: #27272A;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .game-character {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 140px;
+        }
+
+        .game-character svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .game-fill {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, var(--primary) 0%, #34D399 100%);
+            animation: fillUp 4s ease-in-out infinite;
+            opacity: 0.9;
+        }
+
+        @keyframes fillUp {
+
+            0%,
+            100% {
+                height: 20%;
+            }
+
+            50% {
+                height: 85%;
+            }
+        }
+
+        .game-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #27272A;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 15px;
+        }
+
+        .game-status .percent {
+            font-weight: 900;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .game-rewards {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .game-reward {
+            background: #27272A;
+            padding: 14px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .game-reward .emoji {
+            font-size: 20px;
+        }
+
+        .game-reward strong {
+            color: var(--accent);
+        }
+
+        /* ========== OFFER ========== */
+        .offer {
+            padding: 64px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .offer-title {
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .offer-sub {
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .offer-box {
+            background: var(--white);
+            color: var(--dark);
+            padding: 32px 24px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .offer-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .offer-value span {
+            color: var(--accent);
+        }
+
+        .offer-desc {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .offer-limit {
+            display: inline-block;
+            background: #FEF3C7;
+            color: #92400E;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .offer-steps {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .offer-step {
+            background: var(--light);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .offer-step .num {
+            background: var(--primary);
+            color: var(--white);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offer-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .offer-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========== DOWNLOAD ========== */
+        .download {
+            padding: 64px 0;
+            text-align: center;
+            background: var(--light);
+        }
+
+        .download-title {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .download-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--dark);
+            color: var(--white);
+            padding: 14px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: opacity 0.2s;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        .download-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray);
+            background: var(--white);
+        }
+
+        footer a {
+            color: var(--gray);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-tag">🎁 선착순 30명 · 2주 무료체험</div>
+
+            <h1>
+                영양제,<br>
+                <span class="highlight">끝까지 먹어본 적</span><br>
+                있으세요?
+            </h1>
+
+            <p class="hero-sub">
+                사놓고 까먹고, 유통기한 지나서 버리고...<br>
+                약사가 <strong>끝까지 먹을 수 있게</strong> 관리해드립니다.
+            </p>
+
+            <div class="hero-btns">
+                <a href="#offer" class="hero-cta">2주 무료체험 신청 →</a>
+                <a href="#download" class="hero-cta-secondary">앱 다운로드</a>
+            </div>
+
+            <p class="hero-note">
+                <strong>30명 한정</strong> · 앱 설치 + 설문 작성 시
+            </p>
+        </div>
+    </section>
+
+    <!-- PAIN -->
+    <section class="pain">
+        <div class="container">
+            <h2 class="pain-title">
+                영양제 구매의 <span class="underline">불편한 진실</span>
+            </h2>
+
+            <div class="pain-list">
+                <div class="pain-item">
+                    <div class="pain-icon">😅</div>
+                    <div>
+                        <h3>"오늘 먹었나...?"</h3>
+                        <p>바쁜 아침, 점심은 회사, 저녁은 피곤해서... 매일 챙겨먹기 정말 어렵습니다.</p>
+                    </div>
+                </div>
+
+                <div class="pain-item">
+                    <div class="pain-icon">🗑️</div>
+                    <div>
+                        <h3>반도 못 먹고 버림</h3>
+                        <p>6개월치 사서 2달 먹고 방치. 유통기한 지나서 결국 쓰레기통으로.</p>
+                    </div>
+                </div>
+
+                <div class="pain-item">
+                    <div class="pain-icon">💸</div>
+                    <div>
+                        <h3>그게 다 돈인데...</h3>
+                        <p>10만원짜리 영양제, 3만원어치도 못 먹고 버리면 7만원 손해입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pain-stat">
+                <div class="number">73%</div>
+                <div class="label">영양제를 끝까지 복용하지 못하는 비율</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="solution-title">
+                미리내약은 <span class="highlight">끝까지</span> 책임집니다
+            </h2>
+            <p class="solution-sub">추천만 하고 끝? 아닙니다. 다 드실 때까지 관리해드려요.</p>
+
+            <div class="solution-list">
+                <div class="solution-item">
+                    <div class="solution-num">1</div>
+                    <div>
+                        <h3>약사의 맞춤 추천</h3>
+                        <p>건강 설문 기반, 나에게 진짜 필요한 영양제만 골라드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-num">2</div>
+                    <div>
+                        <h3>복용 시간 알림</h3>
+                        <p>설정한 시간에 푸시 알림. 더 이상 깜빡하지 마세요.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-num">3</div>
+                    <div>
+                        <h3>복용 체크 & 기록</h3>
+                        <p>하루하루 체크하면 기록이 쌓입니다. 얼마나 잘 먹고 있는지 한눈에.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-num">4</div>
+                    <div>
+                        <h3>끝까지 먹으면 보상</h3>
+                        <p>꾸준히 복용하면 포인트 적립. 다음 구매 시 할인 혜택.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="game">
+        <div class="container">
+            <h2 class="game-title">게임처럼 재밌게 🎮</h2>
+            <p class="game-sub">복용할수록 캐릭터에 에너지가 채워집니다</p>
+
+            <div class="game-visual">
+                <div class="game-character">
+                    <svg viewBox="0 0 80 140" fill="none" stroke="#555" stroke-width="3" stroke-linecap="round">
+                        <circle cx="40" cy="20" r="16" />
+                        <line x1="40" y1="36" x2="40" y2="80" />
+                        <line x1="40" y1="50" x2="15" y2="70" />
+                        <line x1="40" y1="50" x2="65" y2="70" />
+                        <line x1="40" y1="80" x2="20" y2="120" />
+                        <line x1="40" y1="80" x2="60" y2="120" />
+                    </svg>
+                    <div class="game-fill"></div>
+                </div>
+            </div>
+
+            <div class="game-status">
+                오늘의 에너지 <span class="percent">78%</span>
+            </div>
+
+            <div class="game-rewards">
+                <div class="game-reward">
+                    <span class="emoji">✅</span>
+                    매일 복용 체크하면 캐릭터가 <strong>활기차게</strong> 변해요
+                </div>
+                <div class="game-reward">
+                    <span class="emoji">🎁</span>
+                    2주 연속 복용 시 <strong>1,000원 쿠폰</strong> 지급
+                </div>
+                <div class="game-reward">
+                    <span class="emoji">🏆</span>
+                    복용률 100% 달성 시 <strong>등급 업그레이드</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER -->
+    <section id="offer" class="offer">
+        <div class="container">
+            <h2 class="offer-title">2주 무료체험</h2>
+            <p class="offer-sub">먼저 경험해보세요. 마음에 안 들면 그만두면 됩니다.</p>
+
+            <div class="offer-box">
+                <div class="offer-limit">⏰ 선착순 30명 한정</div>
+                <div class="offer-value">맞춤 영양제 <span>2주분</span></div>
+                <p class="offer-desc">앱 설치 + 건강 설문 작성 시 무료 제공</p>
+
+                <div class="offer-steps">
+                    <div class="offer-step"><span class="num">1</span> 앱 설치</div>
+                    <div class="offer-step"><span class="num">2</span> 설문 작성</div>
+                    <div class="offer-step"><span class="num">3</span> 영양제 수령</div>
+                </div>
+
+                <a href="#download" class="offer-cta">무료체험 신청 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="download-title">앱 다운로드</h2>
+
+            <div class="download-btns">
+                <a href="#" class="download-btn" id="ios-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    App Store
+                </a>
+                <a href="#" class="download-btn" id="android-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 미리내약</p>
+        <p style="margin-top:8px;">문의: 앱 내 채팅 또는 이메일</p>
+    </footer>
+
+</body>
+
+</html>

@@ -113,8 +113,8 @@
   const floatingCTA = document.getElementById('floating-cta');
   const heroSection = document.getElementById('hero');
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
-  const appStoreBtn = document.getElementById('app-store-btn');
-  const playStoreBtn = document.getElementById('play-store-btn');
+  const appStoreBtn = document.getElementById('apple-btn');
+  const playStoreBtn = document.getElementById('google-btn');
 
   // ==================== SCROLL ANIMATIONS ====================
   /**
