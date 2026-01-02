@@ -47,12 +47,109 @@
 
 <body>
 
-    <!-- PAGE 1: HOOK (Statistics) -->
-    <div
+    <!-- CONTROL PANEL -->
+    <div class="fixed top-10 right-10 z-50 bg-white p-4 rounded-xl shadow-2xl flex flex-col gap-4">
+        <h3 class="font-bold text-center text-slate-800">📸 이미지 저장</h3>
+        <button onclick="downloadAll()"
+            class="bg-slate-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-slate-700">
+            모든 슬라이드 저장하기
+        </button>
+        <div class="text-xs text-slate-400 text-center">각각 다운로드됩니다</div>
+    </div>
+
+    <!-- ==================== VARIANT A: SELECTION HASSLE (Choice) ==================== -->
+    <div class="w-full max-w-[1080px] mb-8 text-center text-2xl font-bold text-slate-400 border-b pb-4">
+        A안: 영양제 선택의 어려움 (index.html)
+    </div>
+
+    <!-- A-1: PROBLEM (Choosing is hard) -->
+    <div id="slide-a-1"
         class="insta-slide bg-slate-50 flex flex-col items-center justify-center p-20 text-center relative selection:bg-none">
-        <!-- Background Decor -->
         <div
-            class="absolute top-0 right-0 w-[600px] h-[600px] bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50">
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50">
+        </div>
+
+        <div class="relative z-10 w-full">
+            <div class="inline-block px-6 py-3 bg-slate-200 text-slate-600 rounded-full text-3xl font-bold mb-12">
+                🤔 아직도 검색하세요?
+            </div>
+
+            <h1 class="text-[80px] font-extrabold text-slate-900 leading-tight mb-16">
+                영양제 하나 고르는데<br>
+                <span class="text-indigo-600">3시간</span> 걸리셨나요?
+            </h1>
+
+            <div
+                class="bg-white rounded-[4rem] p-12 shadow-xl border-l-[16px] border-indigo-500 max-w-4xl mx-auto flex items-center gap-10">
+                <div class="text-[100px]">🤯</div>
+                <div class="text-left">
+                    <div class="text-4xl text-slate-800 font-bold mb-4">"유튜버마다 말이 다르고..."</div>
+                    <div class="text-4xl text-slate-800 font-bold mb-4">"뭐가 나한테 맞는지..."</div>
+                    <div class="text-3xl text-slate-400 font-medium">결국 못 고르고 창 닫은 경험, 있으시죠?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- A-2: SOLUTION (Pharmacist Curation) -->
+    <div id="slide-a-2"
+        class="insta-slide bg-white flex flex-col items-center justify-center p-20 relative selection:bg-none">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50"></div>
+
+        <div class="relative z-10 w-full text-center">
+            <div class="inline-block px-6 py-3 bg-indigo-100 text-indigo-600 rounded-full text-3xl font-bold mb-10">
+                💊 우리동네 약사님이 직접!
+            </div>
+
+            <h1 class="text-[80px] font-black text-slate-900 leading-tight mb-16">
+                이제 <span class="text-indigo-600">고민</span>은 약사에게,<br>
+                당신은 <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">건강</span>만 챙기세요
+            </h1>
+
+            <div class="flex justify-center items-center gap-8 mb-16">
+                <div class="bg-white p-8 rounded-[3rem] shadow-2xl border-4 border-indigo-100 w-[600px]">
+                    <div class="flex items-center gap-6 mb-8 border-b border-indigo-50 pb-6">
+                        <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center text-4xl">🩺
+                        </div>
+                        <div class="text-left">
+                            <div class="text-2xl text-slate-500 font-bold">건강 설문 분석 완료</div>
+                            <div class="text-4xl text-slate-900 font-black">김미리 님을 위한 맞춤팩</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-indigo-50 rounded-2xl p-6">
+                        <div class="flex gap-4">
+                            <div class="w-16 h-16 rounded-full bg-yellow-400 border-4 border-white shadow-sm"></div>
+                            <div class="w-16 h-16 rounded-full bg-orange-400 border-4 border-white shadow-sm -ml-8">
+                            </div>
+                            <div class="w-16 h-16 rounded-full bg-blue-400 border-4 border-white shadow-sm -ml-8"></div>
+                        </div>
+                        <div class="text-2xl font-bold text-indigo-900">하루 한 팩 소분 배송 🚛</div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-indigo-600 text-white text-4xl font-bold py-6 px-16 rounded-full inline-block shadow-lg shadow-indigo-300">
+                선착순 30명, 맞춤영양제 2주 무료체험 →
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== VARIANT B: COMPLIANCE/WASTE (Index_1.html) ==================== -->
+    <div class="w-full max-w-[1080px] mt-20 mb-8 text-center text-2xl font-bold text-slate-400 border-b pb-4">
+        B안: 섭취 관리/낭비 방지 (index_1.html)
+    </div>
+
+    <!-- B-1: PROBLEM (Waste) -->
+    <div id="slide-b-1"
+        class="insta-slide bg-slate-50 flex flex-col items-center justify-center p-20 text-center relative selection:bg-none">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50">
         </div>
         <div
             class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50">
@@ -60,131 +157,90 @@
 
         <div class="relative z-10 w-full">
             <div class="inline-block px-6 py-3 bg-red-100 text-red-600 rounded-full text-3xl font-bold mb-12">
-                ⚠️ 긴급 점검
+                💸 아까운 내 돈...
             </div>
 
-            <h1 class="text-[80px] font-extrabold text-slate-900 leading-tight mb-16">
-                영양제 먹고<br>
-                <span class="text-red-500">속 쓰린</span> 적<br>
-                있으신가요?
+            <h1 class="text-[80px] font-extrabold text-slate-900 leading-tight mb-12">
+                유통기한 지난 영양제<br>
+                <span class="text-red-500">버린 적</span> 있다?
             </h1>
 
-            <div class="bg-white rounded-[4rem] p-12 shadow-xl border-l-8 border-red-500 max-w-4xl mx-auto">
-                <div class="text-4xl text-slate-500 mb-6 font-medium">영양제 섭취자 중</div>
-                <div class="text-[100px] font-black text-slate-900 leading-none mb-4">
-                    <span class="text-red-500 count-up">30.9</span>%
+            <div class="relative inline-block">
+                <div class="text-[200px] leading-none">🗑️</div>
+                <div
+                    class="absolute -bottom-4 right-0 bg-white px-8 py-4 rounded-full text-3xl font-bold shadow-xl border-4 border-red-500 text-red-600 transform rotate-12">
+                    -150,000원
                 </div>
-                <div class="text-4xl text-slate-800 font-bold">
-                    "부작용 경험 있음"
-                </div>
-                <div class="mt-8 text-2xl text-slate-400">
-                    *소화불량, 속쓰림 등 이상 사례 (출처: 필라이즈)
-                </div>
+            </div>
+
+            <div class="mt-12 text-4xl text-slate-500 font-medium">
+                사놓고 안 먹으면<br>
+                세상에서 가장 비싼 쓰레기입니다.
             </div>
         </div>
     </div>
 
-    <!-- PAGE 2: SOLUTION (Pharmacist Analysis) -->
-    <div class="insta-slide bg-white flex flex-col items-center justify-center p-20 relative selection:bg-none">
-        <!-- Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-primary-50"></div>
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[3px] border-primary-200 rounded-full opacity-30">
-        </div>
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] border-[3px] border-primary-100 rounded-full opacity-30">
-        </div>
+    <!-- B-2: SOLUTION (Management) -->
+    <div id="slide-b-2"
+        class="insta-slide bg-white flex flex-col items-center justify-center p-20 relative selection:bg-none">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50"></div>
 
         <div class="relative z-10 w-full text-center">
-            <h2 class="text-5xl font-bold text-slate-600 mb-8">
-                "남들 다 먹으니까..."
-            </h2>
-            <h1 class="text-[90px] font-black text-slate-900 leading-tight mb-16">
-                이제 <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-500">쇼핑</span>하지
-                말고<br>
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-blue-500">분석</span> 받으세요
+            <h1 class="text-[80px] font-black text-slate-900 leading-tight mb-16">
+                약사가 <span class="text-green-600">끝까지</span><br>
+                챙겨 드립니다
             </h1>
 
-            <!-- Analysis Visual -->
-            <div class="flex justify-center items-center gap-8 mb-16">
-                <!-- Before -->
+            <!-- Game/App Visual -->
+            <div class="bg-slate-900 p-10 rounded-[3rem] shadow-2xl max-w-3xl mx-auto mb-16 relative overflow-hidden">
                 <div
-                    class="w-80 h-96 bg-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 grayscale opacity-50">
-                    <div class="text-6xl mb-4">💊</div>
-                    <div class="text-2xl font-bold text-slate-500">무분별한<br>중복 섭취</div>
+                    class="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
                 </div>
 
-                <div class="text-6xl text-primary-500 font-bold">→</div>
-
-                <!-- After -->
-                <div
-                    class="w-80 h-96 bg-white rounded-3xl flex flex-col items-center justify-center p-8 shadow-2xl border-4 border-primary-500 relative">
-                    <div class="absolute -top-6 bg-primary-500 text-white px-6 py-2 rounded-full text-xl font-bold">약사
-                        검증 완료</div>
-                    <div class="text-6xl mb-4">✅</div>
-                    <div class="text-3xl font-bold text-slate-900">나에게 딱<br>맞는 조합</div>
+                <div class="flex items-center gap-8 relative z-10">
+                    <div class="flex-1 bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="text-slate-400 text-xl mb-2">오늘의 섭취율</div>
+                        <div class="text-6xl font-black text-green-400">100%</div>
+                    </div>
+                    <div class="text-5xl">🎁</div>
+                    <div class="flex-1 bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="text-slate-400 text-xl mb-2">획득 포인트</div>
+                        <div class="text-6xl font-black text-yellow-400">+500P</div>
+                    </div>
                 </div>
-            </div>
-
-            <p class="text-4xl text-slate-700 font-bold">
-                내 손안의 온라인 단골 약국, <span class="text-primary-600">미리내약</span>
-            </p>
-        </div>
-    </div>
-
-    <!-- PAGE 3: CTA & SUB FEATURE -->
-    <div
-        class="insta-slide bg-slate-900 flex flex-col items-center justify-center p-20 text-white relative selection:bg-none">
-        <!-- Grid Pattern -->
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-        </div>
-
-        <div class="relative z-10 w-full text-center">
-            <div
-                class="inline-block px-6 py-2 border border-blue-400 text-blue-300 rounded-full text-2xl font-bold mb-10">
-                플러스 꿀기능 🍯
-            </div>
-
-            <h1 class="text-[80px] font-bold leading-tight mb-16">
-                처방전, 병원 문 나서며<br>
-                <span class="text-blue-400">미리 보내두세요</span>
-            </h1>
-
-            <div class="flex justify-center gap-12 mb-20">
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-32 h-32 bg-slate-800 rounded-3xl flex items-center justify-center text-6xl shadow-lg border border-slate-700">
-                        📸</div>
-                    <div class="text-3xl font-medium text-slate-300">찍고</div>
-                </div>
-                <div class="text-5xl self-center text-slate-600">▶</div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-32 h-32 bg-slate-800 rounded-3xl flex items-center justify-center text-6xl shadow-lg border border-slate-700">
-                        📩</div>
-                    <div class="text-3xl font-medium text-slate-300">보내면</div>
-                </div>
-                <div class="text-5xl self-center text-slate-600">▶</div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-32 h-32 bg-blue-600 rounded-3xl flex items-center justify-center text-6xl shadow-lg shadow-blue-500/50">
-                        🎁</div>
-                    <div class="text-3xl font-bold text-white">대기 0분!</div>
+                <div class="mt-8 bg-green-600 text-white rounded-xl py-4 text-2xl font-bold">
+                    "미리내약 알림 덕분에 3달째 완주 중!"
                 </div>
             </div>
 
-            <div class="glass-card rounded-[3rem] p-12 max-w-5xl mx-auto flex items-center justify-between gap-12">
-                <div class="text-left">
-                    <div class="text-3xl font-bold mb-2">지금 바로 시작하세요</div>
-                    <div class="text-slate-300 text-xl">선착순 20명! 2주치 영양제 무료 증정 🎁</div>
-                </div>
-                <div class="bg-white text-slate-900 px-10 py-6 rounded-2xl text-4xl font-bold">
-                    앱 다운로드 ↓
+            <div class="flex flex-col gap-4">
+                <p class="text-3xl text-slate-600 font-bold">
+                    이제 버리지 말고 끝까지 다 드세요.
+                </p>
+                <div class="text-green-600 text-4xl font-bold mt-4">
+                    지금 신청하면 2주 무료 체험!
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function downloadAll() {
+            const ids = ['slide-a-1', 'slide-a-2', 'slide-b-1', 'slide-b-2'];
+            ids.forEach((id, index) => {
+                setTimeout(() => {
+                    const element = document.getElementById(id);
+                    html2canvas(element, { scale: 2 }).then(canvas => {
+                        const link = document.createElement('a');
+                        link.download = `mirinae_feed_${id}.png`;
+                        link.href = canvas.toDataURL();
+                        link.click();
+                    });
+                }, index * 1000); // 1초 간격으로 다운로드
+            });
+        }
+    </script>
 </body>
 
 </html>
