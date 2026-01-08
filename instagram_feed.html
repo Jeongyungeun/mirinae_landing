@@ -42,6 +42,11 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
+
+        .highlight-marker {
+            background: linear-gradient(120deg, transparent 40%, rgba(34, 197, 94, 0.4) 40%);
+            padding: 0 4px;
+        }
     </style>
 </head>
 
@@ -224,20 +229,155 @@
         </div>
     </div>
 
+    <!-- ==================== NEW CONCEPTS FOR A/B TEST ==================== -->
+    <div
+        class="w-full max-w-[1080px] mt-20 mb-8 text-center text-2xl font-bold text-slate-900 border-b-4 border-slate-900 pb-4">
+        🚀 [NEW] A/B 테스트용 신규 피드
+    </div>
+
+    <!-- A-Concept: CHOICE PARALYSIS -->
+    <div id="slide-a-concept"
+        class="insta-slide bg-white flex flex-col items-center justify-center p-20 relative selection:bg-none">
+        <div class="absolute inset-0 bg-slate-50">
+            <!-- Background Pattern -->
+            <div class="absolute top-20 left-10 text-slate-200 text-6xl font-black rotate-12 opacity-50">?</div>
+            <div class="absolute bottom-40 right-20 text-slate-200 text-8xl font-black -rotate-12 opacity-50">?</div>
+            <div class="absolute top-1/2 left-20 text-slate-200 text-5xl font-black rotate-45 opacity-50">?</div>
+        </div>
+
+        <div class="relative z-10 w-full text-center">
+            <!-- Bubble -->
+            <div class="relative inline-block mb-12">
+                <div class="bg-slate-800 text-white px-8 py-4 rounded-3xl text-2xl font-bold animate-bounce">
+                    "유튜브 보니까 이게 좋다던데..."
+                </div>
+                <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-slate-800 rotate-45">
+                </div>
+            </div>
+
+            <h1 class="text-[80px] font-black text-slate-900 leading-tight mb-8">
+                영양제, 검색만<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500">3시간째</span>
+                하셨나요?
+            </h1>
+
+            <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 max-w-3xl mx-auto mb-12">
+                <div class="flex items-center gap-6 mb-6">
+                    <div class="w-full bg-slate-100 rounded-full h-16 flex items-center px-8 relative">
+                        <span class="text-slate-400 text-2xl">나한테 맞는 비타민...|</span>
+                        <div
+                            class="absolute right-2 top-2 bottom-2 bg-blue-500 w-12 rounded-full flex items-center justify-center text-white text-xl">
+                            🔍</div>
+                    </div>
+                </div>
+                <!-- Cross out -->
+                <div class="relative">
+                    <div class="flex justify-center gap-4 opacity-50 blur-[1px]">
+                        <div class="w-32 h-40 bg-slate-100 rounded-lg"></div>
+                        <div class="w-32 h-40 bg-slate-100 rounded-lg"></div>
+                        <div class="w-32 h-40 bg-slate-100 rounded-lg"></div>
+                    </div>
+                    <div
+                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-4xl font-black px-12 py-6 rounded-full rotate-[-10deg] shadow-lg whitespace-nowrap">
+                        이제 그만! ✋
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-4xl font-bold text-slate-700 leading-normal">
+                우리동네 <span class="border-b-4 border-green-500">약사에게 맡기고</span><br>
+                1분 만에 끝내세요.
+            </div>
+
+            <div
+                class="mt-16 inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-full text-2xl font-bold">
+                내 맞춤 영양제 찾기 →
+            </div>
+        </div>
+    </div>
+
+
+    <!-- B-Concept: SIDE EFFECT CHECK -->
+    <div id="slide-b-concept"
+        class="insta-slide bg-white flex flex-col items-center justify-center p-20 relative selection:bg-none">
+
+        <div class="absolute inset-0 bg-green-50/50"></div>
+
+        <div class="relative z-10 w-full text-center">
+            <h1 class="text-[70px] font-black text-slate-900 leading-tight mb-12">
+                "내 고혈압 약이랑<br>
+                <span class="text-green-600">같이 먹어도 될까?</span>"
+            </h1>
+
+            <!-- Visual Metaphor: Safety Check -->
+            <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl max-w-3xl mx-auto mb-14 relative overflow-visible">
+                <!-- Items being checked -->
+                <div class="flex flex-col gap-6 scale-110">
+                    <div class="flex items-center justify-between bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">💊</span>
+                            <div class="text-left">
+                                <div class="text-lg text-slate-500 font-bold">병원 처방약</div>
+                                <div class="text-2xl text-slate-900 font-black">고혈압약</div>
+                            </div>
+                        </div>
+                        <div class="text-slate-300 text-3xl">+</div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">🐟</span>
+                            <div class="text-left">
+                                <div class="text-lg text-slate-500 font-bold">영양제</div>
+                                <div class="text-2xl text-slate-900 font-black">오메가3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div
+                        class="bg-green-100 p-6 rounded-2xl flex items-center justify-center gap-4 border-2 border-green-400">
+                        <div
+                            class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl">
+                            ✓</div>
+                        <div class="text-green-700 text-3xl font-bold">약사 검토 완료: 안전함</div>
+                    </div>
+                </div>
+
+                <!-- Shield Badge -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex flex-col items-center justify-center text-white shadow-lg shadow-blue-200 animate-bounce"
+                    style="animation-duration: 3s;">
+                    <div class="text-4xl mb-1">🛡️</div>
+                    <div class="font-bold text-lg">부작용</div>
+                    <div class="font-black text-xl">안심 케어</div>
+                </div>
+            </div>
+
+            <div class="text-4xl text-slate-600 font-bold mb-10">
+                복용 알림부터 <span class="text-slate-900 highlight-marker">부작용 체크</span>까지,<br>
+                약사가 직접 관리해드립니다.
+            </div>
+
+            <div
+                class="inline-block bg-green-500 text-white text-3xl font-bold px-12 py-6 rounded-2xl shadow-lg hover:bg-green-600 transition-colors cursor-pointer">
+                2주 무료체험 신청하기 👉
+            </div>
+        </div>
+    </div>
+
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script>
         function downloadAll() {
-            const ids = ['slide-a-1', 'slide-a-2', 'slide-b-1', 'slide-b-2'];
+            const ids = ['slide-a-1', 'slide-a-2', 'slide-b-1', 'slide-b-2', 'slide-a-concept', 'slide-b-concept'];
             ids.forEach((id, index) => {
                 setTimeout(() => {
                     const element = document.getElementById(id);
-                    html2canvas(element, { scale: 2 }).then(canvas => {
-                        const link = document.createElement('a');
-                        link.download = `mirinae_feed_${id}.png`;
-                        link.href = canvas.toDataURL();
-                        link.click();
-                    });
-                }, index * 1000); // 1초 간격으로 다운로드
+                    if (element) {
+                        html2canvas(element, { scale: 2 }).then(canvas => {
+                            const link = document.createElement('a');
+                            link.download = `mirinae_feed_${id}.png`;
+                            link.href = canvas.toDataURL();
+                            link.click();
+                        });
+                    }
+                }, index * 800);
             });
         }
     </script>
