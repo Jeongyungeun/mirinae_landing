@@ -196,38 +196,37 @@
         <!-- Left: Text (Storytelling) -->
         <div class="lg:w-1/2 text-center lg:text-left">
           <div
-            class="inline-flex flex-wrap items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-100 text-green-800 text-sm font-bold mb-6 animate-slide-up shadow-sm">
+            class="inline-flex flex-wrap items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-800 text-sm font-bold mb-6 animate-slide-up shadow-sm">
             <span class="flex h-2 w-2 relative flex-shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
             </span>
-            <span>🎉 오픈 기념 무료체험 행사</span>
-            <span class="text-green-600 font-normal text-xs sm:text-sm">(선착순 30명 맞춤영양제 제공)</span>
+            <span>🚀 런칭 기념 영양제 테스터 모집</span>
+            <span class="text-blue-600 font-normal text-xs sm:text-sm">(오늘 처방전 접수 시)</span>
           </div>
 
           <h1
             class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight animate-slide-up"
             style="animation-delay: 100ms;">
-            영양제, <span class="gradient-text">검색만 3시간째?</span>
-            <span class="block mt-4">이제 <strong>우리동네 약사</strong>에게 맡기세요.</span>
+            약국 가기 귀찮을 때,<br>
+            <span class="gradient-text">처방전 사진 한 장</span>이면 끝
           </h1>
 
           <p class="text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-slide-up"
             style="animation-delay: 200ms;">
-            쏟아지는 광고와 정보 속에서 길을 잃으셨나요?<br>
-            더 이상 공부하지 마세요. 당신에게 꼭 필요한 영양제,<br>
-            <strong>약사가 직접 골라 집 앞까지</strong> 보내드립니다.
+            병원 대기만 1시간... 약국 가서 또 기다리시나요?<br>
+            <strong>찍어서 올리면, 약사가 미리 조제해둡니다.</strong>
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up"
             style="animation-delay: 300ms;">
             <a href="#download"
-              onclick="gtag('event', 'click_cta', {'event_category': 'hero', 'event_label': 'start_now', 'page_variant': 'A'}); fbq('track', 'InitiateCheckout');"
+              onclick="gtag('event', 'click_cta', {'event_category': 'hero', 'event_label': 'start_now', 'page_variant': 'C'}); fbq('track', 'InitiateCheckout');"
               class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary-600 text-white font-bold text-lg rounded-2xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              내 맞춤 영양제 찾기
+              처방전 촬영하기 📸
             </a>
             <a href="#download"
-              onclick="gtag('event', 'click_cta', {'event_category': 'hero', 'event_label': 'download_app', 'page_variant': 'A'}); fbq('track', 'ViewContent');"
+              onclick="gtag('event', 'click_cta', {'event_category': 'hero', 'event_label': 'download_app', 'page_variant': 'C'}); fbq('track', 'ViewContent');"
               class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-slate-700 border border-slate-200 font-bold text-lg rounded-2xl hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               앱 다운로드
             </a>
@@ -245,77 +244,55 @@
           </div>
 
           <div class="mx-auto max-w-sm relative">
-            <!-- Situation A: Failure (Pain - Confusion) -->
+            <!-- Situation A: Hassle (Pain) -->
             <div
               class="absolute -left-4 sm:-left-8 top-10 bg-white p-5 rounded-2xl shadow-lg border border-slate-200 z-10 transform -rotate-6 animate-float"
               style="animation-duration: 5s;">
               <div class="flex items-center gap-3 mb-2">
                 <div class="w-8 h-8 bg-slate-100 text-slate-500 rounded-full flex items-center justify-center text-xl">
-                  🤯</div>
+                  🏥</div>
                 <div class="font-bold text-slate-800">Before</div>
               </div>
-              <div class="text-sm text-slate-500">"유튜브 보니까 이게 좋다던데...<br>근데 저 유튜버는 먹지 말래 😵"</div>
-              <div class="mt-2 text-xs text-red-500 font-semibold">스트레스: 200%</div>
+              <div class="text-sm text-slate-500">"병원 대기 1시간...<br>약국 가서 또 30분 대기? 😫"</div>
+              <div class="mt-2 text-xs text-red-500 font-semibold">피로도: 200%</div>
             </div>
 
-            <!-- Situation B: Success (Gain - Clarity) -->
+            <!-- Situation B: Success (Gain) -->
             <div
               class="absolute -right-4 sm:-right-8 top-40 bg-white p-5 rounded-2xl shadow-lg border border-green-100 z-20 transform rotate-3 animate-float"
               style="animation-duration: 6s; animation-delay: 1s;">
               <div class="flex items-center gap-3 mb-2">
                 <div class="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
-                  ✨</div>
+                  🚀</div>
                 <div class="font-bold text-slate-800">After</div>
               </div>
-              <div class="text-sm text-slate-500">"상담받고 내 몸에 딱 맞는<br>조합으로 싹 정리했어요!"</div>
-              <div class="mt-2 text-xs text-primary-600 font-semibold">고민 해결: 1분 컷</div>
+              <div class="text-sm text-slate-500">"처방전 찰칵 찍고<br>바로 찾아가면 끝!"</div>
+              <div class="mt-2 text-xs text-primary-600 font-semibold">대기시간: 0분</div>
             </div>
 
             <!-- App Screen Mockup -->
             <div
-              class="relative mt-10 mx-auto w-64 bg-slate-900 rounded-[2rem] border-4 border-slate-800 shadow-2xl overflow-hidden z-0 opacity-80 scale-90">
-              <!-- Placeholder for app visual: Recommendation Feed -->
-              <div class="h-96 bg-slate-100 flex flex-col items-center justify-start text-slate-300">
-                <div class="w-full h-full bg-slate-800 p-4 relative">
-                  <!-- Screen Header -->
-                  <div class="flex justify-between text-white text-xs mb-4">
-                    <span>9:41</span>
-                    <span>📶 🔋</span>
+              class="relative mt-10 mx-auto w-64 bg-slate-900 rounded-[2rem] border-4 border-slate-800 shadow-2xl overflow-hidden z-0 opacity-100 scale-90">
+              <!-- Placeholder for app visual: Camera Feed -->
+              <div class="h-96 bg-slate-100 flex flex-col items-center justify-start relative">
+                <!-- Camera Viewfinder -->
+                <div class="absolute inset-0 bg-slate-300">
+                  <div class="absolute inset-0 flex items-center justify-center opacity-20 text-6xl">
+                    📄
                   </div>
-                  <!-- Title -->
-                  <div class="mb-4">
-                    <div class="text-xs text-slate-400 mb-1">분석 결과</div>
-                    <div class="text-sm text-white font-bold">김미리님에게<br><span class="text-primary-400">딱 맞는
-                        영양제</span>입니다</div>
+                </div>
+
+                <!-- Overlay UI -->
+                <div class="absolute inset-0 flex flex-col justify-between p-6">
+                  <div
+                    class="text-center bg-black/50 text-white text-xs py-2 rounded-full backdrop-blur-sm self-center px-4">
+                    처방전을 영역 안에 맞춰주세요
                   </div>
-                  <!-- List -->
-                  <div class="space-y-3">
-                    <div class="bg-slate-700 rounded-lg p-3 flex items-center gap-3">
-                      <div
-                        class="w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-500 flex items-center justify-center text-xs font-bold">
-                        B</div>
-                      <div>
-                        <div class="text-xs text-white font-bold">활력 부스터</div>
-                        <div class="text-[10px] text-slate-400">피로회복, 에너지 생성</div>
-                      </div>
-                    </div>
-                    <div class="bg-slate-700 rounded-lg p-3 flex items-center gap-3">
-                      <div
-                        class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center text-xs font-bold">
-                        Mg</div>
-                      <div>
-                        <div class="text-xs text-white font-bold">릴렉스 마그네슘</div>
-                        <div class="text-[10px] text-slate-400">눈 떨림, 숙면 도움</div>
-                      </div>
-                    </div>
-                    <div class="bg-slate-700 rounded-lg p-3 flex items-center gap-3">
-                      <div
-                        class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-500 flex items-center justify-center text-xs font-bold">
-                        O3</div>
-                      <div>
-                        <div class="text-xs text-white font-bold">초임계 오메가3</div>
-                        <div class="text-[10px] text-slate-400">혈행개선, 건조한 눈</div>
-                      </div>
+
+                  <div class="flex justify-center items-center pb-8">
+                    <div
+                      class="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center bg-white/20 backdrop-blur-md">
+                      <div class="w-12 h-12 bg-white rounded-full"></div>
                     </div>
                   </div>
                 </div>
@@ -332,42 +309,42 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
       <div class="text-center mb-16 animate-on-scroll">
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
-          누구 말이 맞는지 모르겠죠?<br>
+          아픈데 약국 대기... 힘들지 않으세요?<br>
           <span class="relative inline-block">
             <span class="absolute inset-x-0 bottom-1 h-3 bg-red-200 opacity-50"></span>
-            <span class="relative">멈추지 않는 검색,</span>
-          </span> 오히려 독이 됩니다
+            <span class="relative">기다림은 그만,</span>
+          </span> 바로 찾아가세요
         </h2>
         <p class="text-slate-500 text-lg">
-          넘쳐나는 정보와 복잡한 성분명, 일반인이 정확히 판단하기엔 너무 어렵습니다.
+          병원 진료 보고 지쳤는데, 약국 가서 또 30분... 이제 미리내약으로 바로 픽업하세요.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Pain 1: Information Overload -->
+        <!-- Pain 1: Waiting -->
         <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 animate-on-scroll delay-100">
-          <div class="text-4xl mb-4">😵</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">"이게 좋다, 저게 좋다..."</h3>
+          <div class="text-4xl mb-4">😫</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">"약국 대기 시간 너무 길어..."</h3>
           <p class="text-slate-500">
-            유튜브, 블로그, 인스타... 볼수록 말이 다 다른 영양제 정보. 밤새 검색해봐도 확신이 서지 않고 머리만 복잡해집니다.
+            병원에서 한참 기다렸는데, 약국 조제 대기까지? 아픈 몸 이끌고 서서 기다리는 것만큼 힘든 일은 없습니다.
           </p>
         </div>
 
-        <!-- Pain 2: Fear of Side Effects -->
+        <!-- Pain 2: Uncertainty -->
         <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 animate-on-scroll delay-200">
-          <div class="text-4xl mb-4">😰</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">"나한테 안 맞으면 어쩌지?"</h3>
+          <div class="text-4xl mb-4">🤷‍♂️</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">"약이 있는지 없는지..."</h3>
           <p class="text-slate-500">
-            남들이 좋다고 해서 샀는데 나한테는 부작용이 생길까 봐, 혹은 이미 먹고 있는 약과 충돌할까 봐 걱정되시나요?
+            힘들게 찾아갔는데 "이 약은 없어요" 라는 말 들어보셨나요? 헛걸음하지 않게 미리 확인해드립니다.
           </p>
         </div>
 
-        <!-- Pain 3: Hassle -->
+        <!-- Pain 3: Counseling -->
         <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 animate-on-scroll delay-300">
-          <div class="text-4xl mb-4">😮‍💨</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">"매번 알아보고 사기 귀찮아"</h3>
+          <div class="text-4xl mb-4">🗣️</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">"사람 많아서 묻기 힘들어"</h3>
           <p class="text-slate-500">
-            떨어질 때마다 최저가 검색하고 배송 기다리고... 그냥 누가 알아서 내 몸에 딱 맞는 걸로 챙겨줬으면 좋겠습니다.
+            뒤에 사람들은 기다리는데 이것저것 묻기 눈치보이시죠? 앱으로 편하게 복약지도를 확인하세요.
           </p>
         </div>
       </div>
@@ -387,90 +364,83 @@
         <div class="lg:w-1/2 animate-on-scroll">
           <div
             class="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 font-bold rounded-lg mb-6 border border-primary-500/30">
-            미리내약 솔루션
+            3단계 간편 서비스
           </div>
           <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-tight">
-            전문가의 분석으로<br>
-            <span class="text-primary-400">가장 쉽고 정확하게</span>
+            사진 한 장이면<br>
+            <span class="text-primary-400">모든 준비 끝</span>
           </h2>
           <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-            이제 영양제 공부는 저희가 하겠습니다. 고객님은 건강해지는 것에만 집중하세요.
+            약국 가서 기다리지 마세요. 조제가 완료되면 알림을 보내드립니다.
+            <strong>가서 찾아오기만 하면 끝!</strong>
           </p>
 
           <ul class="space-y-6">
             <li class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0">🩺
+              <div class="w-12 h-12 rounded-2xl bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0">📸
               </div>
               <div>
-                <h4 class="font-bold text-xl mb-1">약사 x AI 정밀 분석</h4>
-                <p class="text-slate-400 text-sm">건강검진 데이터와 생활습관 설문을 바탕으로 전문 약사가 1:1로 최적의 영양 조합을 설계합니다.</p>
+                <h4 class="font-bold text-xl mb-1">1. 3초 컷 촬영</h4>
+                <p class="text-slate-400 text-sm">처방전을 찍어 올리면, 약사가 즉시 조제를 시작합니다.</p>
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0">📦
+              <div class="w-12 h-12 rounded-2xl bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0">�
               </div>
               <div>
-                <h4 class="font-bold text-xl mb-1">한 팩 맞춤 소분</h4>
-                <p class="text-slate-400 text-sm">여러 병 뚜껑 열 필요 없이, 하루치 영양제를 한 팩에 담아 위생적이고 간편하게 보내드립니다.</p>
+                <h4 class="font-bold text-xl mb-1">2. 조제 완료 알림</h4>
+                <p class="text-slate-400 text-sm">"조제가 완료되었습니다" 알림이 오면 약국으로 출발하세요.</p>
               </div>
             </li>
             <li class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0">🚀
+              <div class="w-12 h-12 rounded-2xl bg-slate-700 flex items-center justify-center text-2xl flex-shrink-0">�️
               </div>
               <div>
-                <h4 class="font-bold text-xl mb-1">알아서 오는 정기배송</h4>
-                <p class="text-slate-400 text-sm">다 먹어갈 때쯤 알아서, 컨디션 변화에 따라 구성을 조정해서 문 앞에 도착합니다.</p>
+                <h4 class="font-bold text-xl mb-1">3. 대기 없는 픽업</h4>
+                <p class="text-slate-400 text-sm">줄 서지 말고 "픽업하러 왔어요" 한마디면 끝! 1초 만에 수령하세요.</p>
               </div>
             </li>
           </ul>
         </div>
 
         <div class="lg:w-1/2 animate-on-scroll delay-200">
-          <!-- Visual: Selection Process / Packaging -->
+          <!-- Visual: Process Flow -->
           <div class="relative bg-white rounded-[2.5rem] p-6 shadow-2xl transform rotate-1">
             <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-500 opacity-10 rounded-[2.5rem]">
             </div>
             <div class="relative z-10 space-y-6">
-              <!-- Header -->
+              <!-- Check -->
               <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-                <div class="font-bold text-slate-800 text-lg">약사님의 처방 설계</div>
-                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">분석 완료</span>
+                <div class="font-bold text-slate-800 text-lg">처방전 접수 완료</div>
+                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">진행중</span>
               </div>
 
-              <!-- Tag Analysis -->
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-slate-100 rounded-lg text-xs text-slate-500">#야근이잦음</span>
-                <span class="px-3 py-1 bg-slate-100 rounded-lg text-xs text-slate-500">#눈피로</span>
-                <span class="px-3 py-1 bg-slate-100 rounded-lg text-xs text-slate-500">#소화불량</span>
-              </div>
-
-              <!-- Recommendation Card -->
-              <div class="p-4 bg-green-50 border border-green-200 rounded-xl">
-                <div class="text-sm text-green-800 font-bold mb-2">✨ 김미리님을 위한 맞춤 팩</div>
-                <div class="flex items-center gap-3">
-                  <div class="flex -space-x-2">
-                    <div
-                      class="w-8 h-8 rounded-full bg-yellow-200 border-2 border-white flex items-center justify-center text-[10px]">
-                      B</div>
-                    <div
-                      class="w-8 h-8 rounded-full bg-orange-200 border-2 border-white flex items-center justify-center text-[10px]">
-                      C</div>
-                    <div
-                      class="w-8 h-8 rounded-full bg-blue-200 border-2 border-white flex items-center justify-center text-[10px]">
-                      Mg</div>
-                  </div>
-                  <div class="text-xs text-slate-500">+ 개인 맞춤 2종 더</div>
+              <!-- Info -->
+              <div class="bg-slate-50 p-4 rounded-xl flex gap-4 items-center">
+                <div
+                  class="w-12 h-12 bg-white rounded-lg border border-slate-200 flex items-center justify-center text-xl">
+                  📄</div>
+                <div>
+                  <div class="font-bold text-slate-700">김건강 내과 처방전</div>
+                  <div class="text-xs text-slate-400">2026.01.11 접수</div>
                 </div>
               </div>
 
-              <!-- Delivery Mockup -->
-              <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
-                <div class="text-2xl">🚛</div>
-                <div class="flex-1">
-                  <div class="font-bold text-slate-700">이번 달 정기배송</div>
-                  <div class="text-xs text-slate-400">내일(수) 도착 예정</div>
+              <!-- Pharmacist -->
+              <div class="p-4 bg-green-50 border border-green-200 rounded-xl relative overflow-hidden">
+                <div class="text-sm text-green-800 font-bold mb-2">👩‍⚕️ 담당 약사 조제 중</div>
+                <div class="text-xs text-green-600">"환자분 특이사항 체크했습니다. 안전하게 조제해드릴게요!"</div>
+              </div>
+
+              <!-- Map -->
+              <div class="h-32 bg-slate-100 rounded-xl relative overflow-hidden flex items-center justify-center">
+                <div
+                  class="absolute inset-0 opacity-20 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover">
                 </div>
-                <button class="px-3 py-1 bg-slate-900 text-white text-xs rounded-lg">조회</button>
+                <div class="relative z-10 flex items-center gap-2">
+                  <span class="text-2xl animate-bounce">🏃</span>
+                  <span class="text-sm font-bold text-slate-600">지금 바로 픽업 가능합니다!</span>
+                </div>
               </div>
             </div>
           </div>
@@ -479,39 +449,40 @@
     </div>
   </section>
 
-  <!-- ==================== SUB FEATURE: Convenience ==================== -->
+  <!-- ==================== SUB FEATURE: Supplement Recommendation ==================== -->
   <section class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
       <div class="bg-white rounded-[3rem] p-6 sm:p-10 lg:p-16 shadow-xl overflow-hidden relative animate-on-scroll">
         <div class="flex flex-col text-center max-w-3xl mx-auto">
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-slate-900">
-            물론, <span class="text-primary-600">처방약</span> 관리도 함께
+            처방약 찾으러 오셨나요?<br>
+            <span class="text-primary-600">나에게 딱 맞는 영양제</span>도 함께 드려요
           </h2>
           <p class="text-slate-500 text-lg mb-10">
-            영양제 따로, 병원약 따로? <br>
-            미리내약에서는 내가 먹는 모든 약을 한눈에 보고 중복 없이 안전하게 관리할 수 있습니다.
+            "내 처방약이랑 같이 먹어도 될까?" 걱정하지 마세요.<br>
+            약사가 약물 상호작용까지 꼼꼼하게 체크해서, 당신에게 가장 필요한 영양제를 추천해드립니다.
           </p>
 
           <div class="flex justify-center gap-4 sm:gap-12 text-center text-sm sm:text-base">
             <div>
               <div
                 class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3 shadow-sm">
-                🏥</div>
-              <div class="font-bold text-slate-700">병원 처방약</div>
+                💊</div>
+              <div class="font-bold text-slate-700">처방약 픽업</div>
             </div>
             <div class="self-center text-slate-300 text-2xl">+</div>
             <div>
               <div
                 class="w-16 h-16 bg-green-50 text-green-500 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3 shadow-sm">
-                �</div>
-              <div class="font-bold text-slate-700">내 영양제</div>
+                🎁</div>
+              <div class="font-bold text-slate-700">맞춤 영양제</div>
             </div>
             <div class="self-center text-slate-300 text-2xl">=</div>
             <div>
               <div
                 class="w-16 h-16 bg-slate-800 text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3 shadow-lg">
                 ✨</div>
-              <div class="font-bold text-slate-700">통합 관리</div>
+              <div class="font-bold text-slate-700">최상의 건강</div>
             </div>
           </div>
         </div>
@@ -523,11 +494,11 @@
   <section id="download" class="py-20 relative overflow-hidden bg-white">
     <div class="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center animate-on-scroll">
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-slate-900">
-        이제 <span class="gradient-text">영양제 고민</span>은<br>
-        우리동네 약사에게 넘기세요
+        기다림 없는 <span class="gradient-text">스마트한 약국 생활</span>,<br>
+        지금 시작하세요
       </h2>
       <p class="text-slate-500 mb-10 text-lg">
-        나에게 딱 맞는 영양제, 찾는 것부터 받아보는 것까지<br>미리내약이 가장 쉬운 길을 열어드립니다.
+        처방전 사진 한 장으로 조제부터 맞춤 영양제 추천까지.<br>줄 서지 말고 바로 픽업하는 미리내약을 만나보세요.
       </p>
 
       <div class="flex flex-col sm:flex-row justify-center gap-4">
