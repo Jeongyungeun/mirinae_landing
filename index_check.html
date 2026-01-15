@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8EHB775QC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-L8EHB775QC');
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <title>미리내약 - 내 고혈압 약, 영양제랑 먹어도 될까?</title>
+    <meta name="description" content="남들 따라 먹는 영양제는 그만. 약사가 당신의 건강 상태와 복용 약물을 분석하여 가장 안전하고 효과적인 영양제를 찾아드립니다.">
+    <meta name="keywords" content="영양제분석, 약사상담, 영양제부작용, 맞춤영양제, 미리내약">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="아직도 '누가 좋더라' 말만 믿고 드시나요?">
+    <meta property="og:description" content="내 몸에 들어가는 건데, 인터넷 검색으로 결정하지 마세요. 약사가 직접 분석해 드립니다.">
+    <meta property="og:image" content="images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            DEFAULT: '#22c55e',
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            DEFAULT: '#3b82f6',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard Variable', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #16a34a 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        /* Mobile Mockup Frame */
+        .mockup-frame {
+            border: 8px solid #1e293b;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            background: #f8fafc;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .mockup-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 24px;
+            background: #1e293b;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 antialiased overflow-x-hidden bg-white">
+
+    <!-- ==================== HERO SECTION: The Provocation ==================== -->
+    <section id="hero" class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-slate-50">
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 w-full z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+
+                <!-- Left: Text (Storytelling) -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-red-600 text-sm font-semibold mb-6 animate-slide-up">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        영양제, 구입 하시면 다 드시나요?
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight animate-slide-up"
+                        style="animation-delay: 100ms;">
+                        남들이 좋다는 영양제,<br>
+                        <span class="gradient-text">나한테도</span> 진짜 좋을까요?
+                    </h1>
+
+                    <p class="text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-slide-up"
+                        style="animation-delay: 200ms;">
+                        블로그, 유튜브... 쏟아지는 정보 속에서 길을 잃으셨나요?<br>
+                        이제 <strong>'고민'</strong>하지 말고 전문가에게 다 맡기세요.<br>
+                        당신에게 꼭 필요한 것만 남겨드립니다.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up"
+                        style="animation-delay: 300ms;">
+                        <a href="#download"
+                            class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary-600 text-white font-bold text-lg rounded-2xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            내 영양제 분석받기
+                        </a>
+                        <p class="text-sm text-slate-400 mt-3 sm:mt-0 self-center">
+                            * 현재 <span class="text-primary-600 font-bold">1,204명</span>이 분석 대기 중입니다
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Metaphor (Confusion vs Clarity) -->
+                <div class="lg:w-1/2 relative animate-float">
+                    <!-- Background Shape -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-green-100 to-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10">
+                    </div>
+
+                    <div class="mx-auto max-w-sm relative">
+                        <!-- Situation A card (Pain) -->
+                        <div class="absolute -left-4 sm:-left-8 top-10 bg-white p-5 rounded-2xl shadow-lg border border-red-100 z-10 transform -rotate-6 animate-float"
+                            style="animation-duration: 5s;">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-xl">😖
+                                </div>
+                                <div class="font-bold text-slate-800">정보 과부하</div>
+                            </div>
+                            <div class="text-sm text-slate-500">"유튜브 보니까 이것도 먹으라 하고...<br>저것도 먹으라 하고... 도대체 뭘?"</div>
+                        </div>
+
+                        <!-- Situation B card (Pain) -->
+                        <div class="absolute -right-4 sm:-right-8 top-32 bg-white p-5 rounded-2xl shadow-lg border border-orange-100 z-0 transform rotate-3 animate-float"
+                            style="animation-duration: 6s; animation-delay: 1s;">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div
+                                    class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-xl">
+                                    💊</div>
+                                <div class="font-bold text-slate-800">약물 상호작용?</div>
+                            </div>
+                            <div class="text-sm text-slate-500">"고혈압 약 먹는데 오메가3<br>같이 먹어도 되는 건가...?"</div>
+                        </div>
+
+                        <!-- Solution App Screen -->
+                        <div
+                            class="relative mt-20 mx-auto w-64 bg-slate-900 rounded-[2rem] border-4 border-slate-800 shadow-2xl overflow-hidden z-20">
+                            <div class="h-full bg-white flex flex-col">
+                                <div class="bg-primary-500 p-4 text-white text-center font-bold">미리내약 분석 리포트</div>
+                                <div class="p-4 space-y-4">
+                                    <div
+                                        class="flex gap-3 items-center bg-green-50 p-3 rounded-lg border border-green-100">
+                                        <span class="text-green-600 text-xl">✅</span>
+                                        <div class="text-xs">
+                                            <div class="font-bold text-slate-800">비타민D (2000IU)</div>
+                                            <div class="text-slate-500">현재 부족 상태, 필수 추천</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3 items-center bg-red-50 p-3 rounded-lg border border-red-100">
+                                        <span class="text-red-600 text-xl">⚠️</span>
+                                        <div class="text-xs">
+                                            <div class="font-bold text-slate-800">종합비타민 A사</div>
+                                            <div class="text-red-500">현재 드시는 고혈압 약과<br>상호작용 주의 필요</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <span
+                                            class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-bold">약사
+                                            코멘트 도착
+                                            💌</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROBLEM SECTION (Pain Points) ==================== -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+                    혹시 <span class="relative inline-block">
+                        <span class="absolute inset-x-0 bottom-1 h-3 bg-red-200 opacity-50"></span>
+                        <span class="relative">이런 경험</span>
+                    </span> 있으신가요?
+                </h2>
+                <p class="text-slate-500 text-lg">
+                    우리는 건강해지려고 영양제를 사지만, 정작 불안감만 쌓이곤 합니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pain 1 -->
+                <!-- Pain 1: Overdose Stats -->
+                <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 animate-on-scroll delay-100">
+                    <div class="text-4xl mb-4">😵‍💫</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">3명 중 1명은 과다 섭취</h3>
+                    <div class="text-xs text-slate-400 mb-3">*국내 영양제 섭취자 분석 결과</div>
+                    <p class="text-slate-500">
+                        좋다는 거 다 챙겨 먹다가 오히려 독이 될 수 있습니다. 최적 섭취량을 넘겨 드시고 계시진 않나요?
+                    </p>
+                </div>
+
+                <!-- Pain 2 -->
+                <!-- Pain 2: Wasted Money -->
+                <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 animate-on-scroll delay-200">
+                    <div class="text-4xl mb-4">💸</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">쌓여가는 영양제, 버려지는 돈</h3>
+                    <p class="text-slate-500">
+                        세일해서, 유행해서 샀지만 효과 못 느껴 방치된 영양제들. 맞지 않는 영양제는 돈 낭비일 뿐입니다.
+                    </p>
+                </div>
+
+                <!-- Pain 3 -->
+                <!-- Pain 3: Side Effect Stats -->
+                <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 animate-on-scroll delay-300">
+                    <div class="text-4xl mb-4">⚠️</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">30.9%가 부작용 경험</h3>
+                    <div class="text-xs text-slate-400 mb-3">*소화불량, 속쓰림 등 이상 사례</div>
+                    <p class="text-slate-500">
+                        "이거 같이 먹어도 되나?"<br>
+                        전문가 확인 없는 무분별한 섭취가 부작용의 원인이 됩니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOLUTION SECTION ==================== -->
+    <section
+        class="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <!-- Deco -->
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-600 rounded-full mix-blend-overlay filter blur-[100px] opacity-20">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <div
+                        class="inline-block px-4 py-2 bg-primary-500/20 text-primary-400 font-bold rounded-lg mb-6 border border-primary-500/30">
+                        미리내약 솔루션
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold mb-6 leading-tigth">
+                        당신의 건강,<br>
+                        <span class="text-primary-400">주치 약사</span>가<br>
+                        처음부터 끝까지 책임집니다
+                    </h2>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                        미리내약은 단순한 영양제 쇼핑몰이 아닙니다.<br>
+                        당신의 식습관, 생활 패턴, 복용 중인 약물을 종합적으로 분석하여<br>
+                        <strong class="text-white">가장 안전하고 효과적인 조합</strong>만을 제안합니다.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center text-xs font-bold">✓</span>
+                            <span>1:1 약사 매칭 및 정밀 분석</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center text-xs font-bold">✓</span>
+                            <span>중복 성분 및 과다 복용 체크</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center text-xs font-bold">✓</span>
+                            <span>지속적인 섭취 관리 및 피드백</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:w-1/2 animate-on-scroll delay-200">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="약사 상담"
+                        class="rounded-3xl shadow-2xl border-4 border-slate-700 opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SUB FEATURE: Convenience ==================== -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+            <div
+                class="bg-white rounded-[3rem] p-6 sm:p-10 lg:p-16 shadow-xl overflow-hidden relative animate-on-scroll">
+                <div class="flex flex-col text-center max-w-3xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-slate-900">
+                        아, 처방전도 <span class="text-primary-600">미리</span> 보내세요
+                    </h2>
+                    <p class="text-slate-500 text-lg mb-10">
+                        영양제 상담 받는 김에 처방전도 미리 보내두세요.<br>
+                        약국 가서 멍하니 앉아 기다리는 시간, 미리내약이 없애드립니다.
+                    </p>
+
+                    <div class="flex justify-center gap-8 text-center">
+                        <div>
+                            <div
+                                class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3">
+                                📸</div>
+                            <div class="font-bold text-slate-700">찍고</div>
+                        </div>
+                        <div class="self-center text-slate-300 text-2xl">👉</div>
+                        <div>
+                            <div
+                                class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3">
+                                📩</div>
+                            <div class="font-bold text-slate-700">보내면</div>
+                        </div>
+                        <div class="self-center text-slate-300 text-2xl">👉</div>
+                        <div>
+                            <div
+                                class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3">
+                                🎁</div>
+                            <div class="font-bold text-slate-700">조제 끝</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section id="download" class="py-20 relative overflow-hidden bg-white">
+        <div class="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center animate-on-scroll">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-slate-900">
+                이제 당신의 건강을<br>
+                <span class="gradient-text">전담 약사</span>에게 맡기세요
+            </h2>
+            <p class="text-slate-500 mb-10">
+                첫 분석 상담 20분께 2주치 맞춤 영양제를 무료로 드립니다. 지금 바로 시작해보세요.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button id="apple-btn"
+                    class="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    App Store
+                </button>
+                <button id="google-btn"
+                    class="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    Google Play
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 text-slate-400 py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 text-center text-xs">
+            <p>&copy; 2025 MirinaeDrug. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== EVENT POPUP ==================== -->
+    <div id="event-popup"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden backdrop-blur-sm transition-opacity duration-300 opacity-0"
+        aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="relative bg-white rounded-3xl shadow-2xl max-w-sm w-full mx-6 overflow-hidden transform transition-all scale-95 opacity-0"
+            id="popup-content">
+            <!-- Decoration -->
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-blue-500"></div>
+
+            <!-- Close Button -->
+            <button onclick="closePopup()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors p-2 rounded-full hover:bg-slate-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="p-8 text-center">
+                <div
+                    class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                    🎁
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-900 mb-2" id="modal-title">오픈 기념 이벤트</h3>
+
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    <span class="block font-bold text-primary-600 text-xl mb-1">선착순 30분께</span>
+                    맞춤형 영양제 <span
+                        class="text-slate-900 font-bold underline decoration-yellow-400 decoration-4 underline-offset-2">2주분
+                        무료 체험</span>
+                </p>
+
+                <a href="#download" onclick="closePopup()"
+                    class="block w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    무료체험 신청하기 👉
+                </a>
+
+                <div class="mt-4 flex items-center justify-center gap-2 cursor-pointer group"
+                    onclick="closePopupToday()">
+                    <div class="w-4 h-4 rounded-full border border-slate-300 group-hover:border-slate-400"></div>
+                    <span class="text-xs text-slate-400 group-hover:text-slate-500">오늘 하루 보지 않기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Popup Logic
+        const popup = document.getElementById('event-popup');
+        const popupContent = document.getElementById('popup-content');
+
+        function openPopup() {
+            if (localStorage.getItem('hidePopupToday')) {
+                const date = new Date();
+                const hideDate = new Date(localStorage.getItem('hidePopupToday'));
+                if (date.toDateString() === hideDate.toDateString()) {
+                    return;
+                }
+            }
+            popup.classList.remove('hidden');
+            // Small delay for transition
+            setTimeout(() => {
+                popup.classList.remove('opacity-0');
+                popupContent.classList.remove('scale-95', 'opacity-0');
+                popupContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closePopup() {
+            popup.classList.add('opacity-0');
+            popupContent.classList.remove('scale-100', 'opacity-100');
+            popupContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                popup.classList.add('hidden');
+            }, 300);
+        }
+
+        function closePopupToday() {
+            const date = new Date();
+            localStorage.setItem('hidePopupToday', date);
+            closePopup();
+        }
+
+        // Auto open after 1 second
+        window.addEventListener('load', () => {
+            setTimeout(openPopup, 1000);
+        });
+    </script>
+</body>
+
+</html>
