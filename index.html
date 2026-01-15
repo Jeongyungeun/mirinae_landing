@@ -521,6 +521,9 @@
           Google Play
         </button>
       </div>
+      <p class="mt-6 text-sm text-slate-400">
+        혹은 구글 플레이스토어에서 <span class="font-bold text-slate-600">'미리내약'</span>을 검색하세요
+      </p>
     </div>
   </section>
 
@@ -533,6 +536,7 @@
 
   <script src="js/main.js"></script>
 
+  <!-- ==================== EVENT POPUP ==================== -->
   <!-- ==================== EVENT POPUP ==================== -->
   <div id="event-popup"
     class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 hidden backdrop-blur-sm transition-opacity duration-300 opacity-0"
@@ -585,26 +589,36 @@
     const popupContent = document.getElementById('popup-content');
 
     function openPopup() {
+      // Check localStorage for 'hidePopupToday'
       if (localStorage.getItem('hidePopupToday')) {
         const date = new Date();
         const hideDate = new Date(localStorage.getItem('hidePopupToday'));
+        // Compare date strings to ignore time
         if (date.toDateString() === hideDate.toDateString()) {
           return;
         }
       }
+
+      // Remove 'hidden' first to make it display:flex (defined in class or user agent style if using flex class)
+      // Note: Tailwind 'hidden' is display:none. Removing it reverts to 'flex' if 'flex' class is present.
       popup.classList.remove('hidden');
-      // Small delay for transition
-      setTimeout(() => {
-        popup.classList.remove('opacity-0');
-        popupContent.classList.remove('scale-95', 'opacity-0');
-        popupContent.classList.add('scale-100', 'opacity-100');
-      }, 10);
+
+      // Small delay to allow display change to render before opacity transition
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          popup.classList.remove('opacity-0');
+          popupContent.classList.remove('scale-95', 'opacity-0');
+          popupContent.classList.add('scale-100', 'opacity-100');
+        }, 50);
+      });
     }
 
     function closePopup() {
       popup.classList.add('opacity-0');
       popupContent.classList.remove('scale-100', 'opacity-100');
       popupContent.classList.add('scale-95', 'opacity-0');
+
+      // Wait for transition to finish before hiding
       setTimeout(() => {
         popup.classList.add('hidden');
       }, 300);
@@ -616,10 +630,15 @@
       closePopup();
     }
 
-    // Auto open after 1 second
-    window.addEventListener('load', () => {
+    // Checking document readiness to ensure popup opens
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(openPopup, 1000);
+      });
+    } else {
+      // DOM already ready (e.g. async script)
       setTimeout(openPopup, 1000);
-    });
+    }
   </script>
 </body>
 

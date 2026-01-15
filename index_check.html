@@ -446,6 +446,9 @@
                     Google Play
                 </button>
             </div>
+            <p class="mt-6 text-sm text-slate-400">
+                혹은 구글 플레이스토어에서 <span class="font-bold text-slate-600">'미리내약'</span>을 검색하세요
+            </p>
         </div>
     </section>
 
@@ -519,11 +522,13 @@
             }
             popup.classList.remove('hidden');
             // Small delay for transition
-            setTimeout(() => {
-                popup.classList.remove('opacity-0');
-                popupContent.classList.remove('scale-95', 'opacity-0');
-                popupContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    popup.classList.remove('opacity-0');
+                    popupContent.classList.remove('scale-95', 'opacity-0');
+                    popupContent.classList.add('scale-100', 'opacity-100');
+                }, 50);
+            });
         }
 
         function closePopup() {
@@ -542,9 +547,13 @@
         }
 
         // Auto open after 1 second
-        window.addEventListener('load', () => {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(openPopup, 1000);
+            });
+        } else {
             setTimeout(openPopup, 1000);
-        });
+        }
     </script>
 </body>
 
